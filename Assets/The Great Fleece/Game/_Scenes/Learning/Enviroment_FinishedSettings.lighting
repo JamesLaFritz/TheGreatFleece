@@ -6,19 +6,19 @@ LightingSettings:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Environment_FinishedSettings
+  m_Name: Enviroment_FinishedSettings
   serializedVersion: 3
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 1
-  m_RealtimeEnvironmentLighting: 1
+  m_RealtimeEnvironmentLighting: 0
   m_BounceScale: 1
   m_AlbedoBoost: 4.08
   m_IndirectOutputScale: 1.14
   m_UsingShadowmask: 0
   m_BakeBackend: 2
-  m_LightmapMaxSize: 1024
-  m_BakeResolution: 40
+  m_LightmapMaxSize: 256
+  m_BakeResolution: 15
   m_Padding: 2
   m_TextureCompression: 1
   m_AO: 0
@@ -40,9 +40,9 @@ LightingSettings:
   m_FinalGatherFiltering: 1
   m_PVRCulling: 1
   m_PVRSampling: 1
-  m_PVRDirectSampleCount: 16
-  m_PVRSampleCount: 400
-  m_PVREnvironmentSampleCount: 400
+  m_PVRDirectSampleCount: 8
+  m_PVRSampleCount: 150
+  m_PVREnvironmentSampleCount: 150
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 4
   m_PVRBounces: 2
@@ -51,7 +51,7 @@ LightingSettings:
   m_PVRFilteringMode: 2
   m_PVRDenoiserTypeDirect: 0
   m_PVRDenoiserTypeIndirect: 0
-  m_PVRDenoiserTypeAO: 0
+  m_PVRDenoiserTypeAO: 1
   m_PVRFilterTypeDirect: 0
   m_PVRFilterTypeIndirect: 0
   m_PVRFilterTypeAO: 0
