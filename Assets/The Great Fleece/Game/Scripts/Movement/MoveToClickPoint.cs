@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class MoveToClickPoint : NavMeshAgentMovement
 {
-    [SerializeField] private GameObject goal;
-    private bool m_hasGoal;
-    private GameObject m_instantiatedGameObject;
-    private bool m_hasInstantiatedGameObject;
+    [SerializeField] private GameObject m_clickedVisualPrefab;
+    private bool m_hasClickedPrefab;
+    private GameObject m_clickedVisualGameObject;
+    private bool m_hasClickedVisualGameObject;
 
     #region Overrides of NavMeshAgentMovement
 
@@ -14,19 +14,7 @@ public class MoveToClickPoint : NavMeshAgentMovement
     {
         base.Start();
 
-        m_hasGoal = goal != null;
-    }
-
-    /// <inheritdoc />
-    protected override void Update()
-    {
-        base.Update();
-
-        // ReSharper disable once PossibleNullReferenceException
-        if (!m_hasInstantiatedGameObject || !(agent.remainingDistance < agent.radius)) return;
-        m_hasInstantiatedGameObject = false;
-        Destroy(m_instantiatedGameObject);
-        m_instantiatedGameObject = null;
+        m_hasClickedPrefab = m_clickedVisualPrefab != null;
     }
 
     /// <inheritdoc />
@@ -37,16 +25,25 @@ public class MoveToClickPoint : NavMeshAgentMovement
         // ReSharper disable once PossibleNullReferenceException
         if (!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, 100)) return;
         destination = hit.point;
-        if (!m_hasGoal) return;
-        if (m_hasInstantiatedGameObject)
+
+        if (!m_hasClickedPrefab) return;
+        if (m_hasClickedVisualGameObject)
         {
-            m_hasInstantiatedGameObject = false;
-            Destroy(m_instantiatedGameObject);
-            m_instantiatedGameObject = null;
+            m_hasClickedVisualGameObject = false;
+            Destroy(m_clickedVisualGameObject);
+            m_clickedVisualGameObject = null;
         }
 
-        m_instantiatedGameObject = Instantiate(goal, destination, Quaternion.identity);
-        m_hasInstantiatedGameObject = true;
+        m_clickedVisualGameObject = Instantiate(m_clickedVisualPrefab, destination, Quaternion.identity);
+        m_hasClickedVisualGameObject = true;
+    }
+
+    protected override void StopMovement()
+    {
+        if (!m_hasClickedVisualGameObject) return;
+        m_hasClickedVisualGameObject = false;
+        Destroy(m_clickedVisualGameObject);
+        m_clickedVisualGameObject = null;
     }
 
     #endregion

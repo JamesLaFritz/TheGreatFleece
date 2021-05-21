@@ -10,4 +10,7 @@ public class MoveTo : NavMeshAgentMovement
         if (m_goal is null) return;
         destination = m_goal.position;
     }
+
+    /// <inheritdoc />
+    protected override void StopMovement() { }
 }
