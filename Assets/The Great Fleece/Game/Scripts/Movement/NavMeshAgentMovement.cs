@@ -52,7 +52,7 @@ public abstract class NavMeshAgentMovement : MonoBehaviour
     /// Call Set Destination.
     /// If the destination Changes sets the agent's destination to the new destination.
     /// IF the agent.remainingDistance less then equal to 0 Call Stop Movement.
-    /// If there is an animator set the ISsWalking Parameter to agent.remainingDistance > 0
+    /// If there is an animator set the ISWalking Parameter to agent.remainingDistance > 0
     /// </summary>
     protected virtual void Update()
     {
@@ -85,7 +85,7 @@ public abstract class NavMeshAgentMovement : MonoBehaviour
     protected abstract void SetDestination();
 
     /// <summary>
-    /// This Method is Called From within the Update Method when the agent.remainingDistance less then the agent.radius
+    /// This Method is Called From within the Update Method when the agent.remainingDistance less then 0
     /// </summary>
     protected abstract void StopMovement();
 }
