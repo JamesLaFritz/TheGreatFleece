@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 8744603255780871525}
   - component: {fileID: 1973789535}
   - component: {fileID: 582786025}
+  - component: {fileID: 8297736391325557598}
   m_Layer: 0
   m_Name: SecurityGuard
   m_TagString: Guard1
@@ -568,6 +569,24 @@ MonoBehaviour:
   m_timeToWaitBetweenMovingMax: 5
   m_waypoints: []
   m_startIndex: 0
+--- !u!114 &8297736391325557598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111442448927152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4f46a9f15345e4182379fa3228758f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_waitAtCoinTime: 2
+  m_coinTossedGameEventListener:
+    event: {fileID: 11400000, guid: c49abfde940ced44fa84a1536161f16c, type: 2}
+  m_coinTossedPosition: {fileID: 11400000, guid: 7df7c95044ac2b441a554895b1efe016,
+    type: 2}
+  m_animator: {fileID: 0}
 --- !u!1 &1114851893369222
 GameObject:
   m_ObjectHideFlags: 0

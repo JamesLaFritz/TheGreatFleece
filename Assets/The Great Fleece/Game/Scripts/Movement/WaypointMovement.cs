@@ -28,6 +28,12 @@ public class WaypointMovement : NavMeshAgentMovement
 
     private int m_changeIndexBy = 1;
 
+    private void OnEnable()
+    {
+        if (agent != null)
+            agent.SetDestination(destination);
+    }
+
     #region Overrides of NavMeshAgentMovement
 
     /// <inheritdoc />
@@ -78,6 +84,8 @@ public class WaypointMovement : NavMeshAgentMovement
     {
         // We are starting the waiting set is waiting to true;
         m_isWaiting = true;
+
+        Debug.Assert(m_waypoints != null, nameof(m_waypoints) + " != null");
 
         // If we are here then the agent has reached it's destination.
         if (m_waypoints.Count <= 0)

@@ -74,7 +74,7 @@ public abstract class NavMeshAgentMovement : MonoBehaviour
 
         if (!m_hasAnimator) return;
         // ReSharper disable PossibleNullReferenceException
-        m_animator.SetBool(IsWalking, agent.remainingDistance > 0);
+        m_animator.SetBool(IsWalking, !agent.pathPending && agent.remainingDistance > 0);
         // ReSharper restore PossibleNullReferenceException
     }
 

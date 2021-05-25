@@ -22369,7 +22369,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7769231, y: 1}
+    m_SensorSize: {x: 1.7763975, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27271,6 +27271,7 @@ GameObject:
   - component: {fileID: 1118075905}
   - component: {fileID: 1118075904}
   - component: {fileID: 1118075903}
+  - component: {fileID: 1118075910}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -27410,6 +27411,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1118075910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118075902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a455ea0ac56c96d4598e5034dc3db7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coinPrefab: {fileID: 5520677897087169924, guid: 4aee20544b12e47219af132208bc5ccb,
+    type: 3}
+  m_coinTossed: {fileID: 11400000, guid: c49abfde940ced44fa84a1536161f16c, type: 2}
+  m_coinTossedPosition: {fileID: 11400000, guid: 7df7c95044ac2b441a554895b1efe016,
+    type: 2}
+  m_animator: {fileID: 0}
 --- !u!1 &1120702337
 GameObject:
   m_ObjectHideFlags: 0
@@ -38279,7 +38298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 2102155568}
-  m_PathPosition: 3
+  m_PathPosition: 2.660989
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
