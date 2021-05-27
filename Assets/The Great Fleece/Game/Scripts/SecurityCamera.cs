@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class SecurityCamera : MonoBehaviour
 {
@@ -62,21 +60,21 @@ public class SecurityCamera : MonoBehaviour
 
             if (m_hasAnimator)
             {
-                System.Diagnostics.Debug.Assert(m_animator != null, nameof(m_animator) + " != null");
+                Debug.Assert(m_animator != null, nameof(m_animator) + " != null");
                 m_animator.enabled = false;
             }
 
             if (m_hasMeshRender)
             {
-                System.Diagnostics.Debug.Assert(m_propertyBlock != null, nameof(m_propertyBlock) + " != null");
+                Debug.Assert(m_render != null, nameof(m_render) + " != null");
+                Debug.Assert(m_propertyBlock != null, nameof(m_propertyBlock) + " != null");
+                m_render.GetPropertyBlock(m_propertyBlock);
                 m_propertyBlock.SetColor(PropertyColor, m_alertColor);
-                System.Diagnostics.Debug.Assert(m_render != null, nameof(m_render) + " != null");
                 m_render.SetPropertyBlock(m_propertyBlock);
             }
 
-            yield return new WaitForSeconds(0.5f);
-
             Debug.Assert(m_event != null, nameof(m_event) + " != null");
+            yield return new WaitForSeconds(5f);
             m_event.Raise();
 
             break;
