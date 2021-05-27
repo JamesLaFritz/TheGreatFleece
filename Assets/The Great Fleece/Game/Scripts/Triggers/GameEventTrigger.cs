@@ -30,6 +30,7 @@ public class GameEventTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"{name} Colliding with {other.name} with tag {other.name}");
         if (!m_hasGameEvent || !m_hasTags) return;
 
         if (m_TriggerOnce && m_hasGameEventBeenTriggered) return;
@@ -42,6 +43,7 @@ public class GameEventTrigger : MonoBehaviour
 
             m_hasGameEventBeenTriggered = true;
             Debug.Assert(m_event != null, nameof(m_event) + " != null");
+            Debug.Log($"Raising Event {m_event.name}");
             m_event.Raise();
         }
     }

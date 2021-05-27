@@ -13609,7 +13609,6 @@ GameObject:
   m_Component:
   - component: {fileID: 456618855}
   - component: {fileID: 456618854}
-  - component: {fileID: 456618856}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -13626,37 +13625,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 456618853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ecfa326719ac04ea9e5dd7abb53c8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 310024ea6f2fbf447a70005d10342c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: a2681db1e063fe242a42bd8d515336c6, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 840980170}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 733452397}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_beginningCutscene:
+    m_cutsceneEventListener:
+      event: {fileID: 11400000, guid: 20c175e958f9a764d9b238b4536521aa, type: 2}
+    m_cutScene: {fileID: 594273914}
+  m_gameOverCutscene:
+    m_cutsceneEventListener:
+      event: {fileID: 11400000, guid: a2681db1e063fe242a42bd8d515336c6, type: 2}
+    m_cutScene: {fileID: 840980170}
+  m_sleepingGuardCutscene:
+    m_cutsceneEventListener:
+      event: {fileID: 11400000, guid: f81816c3e50fa7e4ba697fe64a53e6c3, type: 2}
+    m_cutScene: {fileID: 841636214}
+  m_completeLevelCutscene:
+    m_cutsceneEventListener:
+      event: {fileID: 11400000, guid: c6cf3a0ce52ac5a4dbc71bca47328a44, type: 2}
+    m_cutScene: {fileID: 1571620471}
+  keyCard: {fileID: 1994932250}
 --- !u!4 &456618855
 Transform:
   m_ObjectHideFlags: 0
@@ -13671,34 +13659,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &456618856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456618853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ecfa326719ac04ea9e5dd7abb53c8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: f81816c3e50fa7e4ba697fe64a53e6c3, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 841636214}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1001 &465949763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19870,7 +19830,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786561, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22288,9 +22248,14 @@ PlayableDirector:
     value: {fileID: 643696968}
   - key: {fileID: 3221453394482637863, guid: e95e140899add3046b091fe93673bf05, type: 2}
     value: {fileID: 914732145}
+  - key: {fileID: 62916224494074780, guid: e95e140899add3046b091fe93673bf05, type: 2}
+    value: {fileID: 1361990653}
+  - key: {fileID: -5782024573419329578, guid: e95e140899add3046b091fe93673bf05, type: 2}
+    value: {fileID: 1118075902}
   m_ExposedReferences:
     m_References:
     - 76a84d242946c7c4da188e7c3382401a: {fileID: 1555227599}
+    - 87fa900d7b56b8b4f9bd4a3aa67beb8d: {fileID: 842464932}
     - a04f47ada75d90c46b45405b03efea96: {fileID: 1555227599}
     - 0b5f59d278d3ad74e9455bbb30ab299b: {fileID: 842392197}
     - 32a605abe90f08d4faeddef6c062b97b: {fileID: 842392197}
@@ -22418,7 +22383,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7741935, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22522,7 +22487,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7768595, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28109,7 +28074,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786561, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34106,7 +34071,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7741935, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34122,7 +34087,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555227598}
-  m_LocalRotation: {x: -0.00041950645, y: 0.8670498, z: -0.0007300638, w: -0.4982208}
+  m_LocalRotation: {x: -0.00041950657, y: 0.8670498, z: -0.0007300643, w: -0.49822074}
   m_LocalPosition: {x: 3.95, y: 3.052, z: -106.078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34415,6 +34380,8 @@ PlayableDirector:
     value: {fileID: 409789455}
   - key: {fileID: 4832701676836422073, guid: 38a26b45fc898df4493700fbf954fdb1, type: 2}
     value: {fileID: 37450610}
+  - key: {fileID: 3059509129658904320, guid: 38a26b45fc898df4493700fbf954fdb1, type: 2}
+    value: {fileID: 1118075902}
   m_ExposedReferences:
     m_References:
     - 4ef196a2a8f39a54a8f06d6bcb7f3d8a: {fileID: 750119068}
@@ -38831,7 +38798,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40905,7 +40872,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979395718}
-  m_LocalRotation: {x: 0.08001503, y: -0.1747477, z: 0.014249574, w: 0.9812532}
+  m_LocalRotation: {x: 0.06928343, y: 0.14353187, z: -0.010073661, w: 0.98716617}
   m_LocalPosition: {x: 6.3, y: 0, z: -93.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -40942,7 +40909,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772021, y: 1}
+    m_SensorSize: {x: 1.7804878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
