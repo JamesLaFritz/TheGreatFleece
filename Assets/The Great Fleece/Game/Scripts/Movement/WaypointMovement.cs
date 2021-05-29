@@ -121,7 +121,8 @@ public class WaypointMovement : NavMeshAgentMovement
                 break;
             case PatrolType.OneTime:
                 // Increase the value of the Index keeping it in bounds of the list.
-                m_destinationPointIndex = math.min(m_destinationPointIndex++, m_waypoints.Count - 1);
+                m_destinationPointIndex++;
+                m_destinationPointIndex = math.min(m_destinationPointIndex, m_waypoints.Count - 1);
                 break;
             default:
                 throw new System.ArgumentOutOfRangeException();
