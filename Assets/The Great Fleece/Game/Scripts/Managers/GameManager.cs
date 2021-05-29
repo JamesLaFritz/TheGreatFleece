@@ -11,6 +11,28 @@ public class GameManager : MonoBehaviour
 
     private bool m_hasKeyCard;
 
+    private static GameManager _instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("The Game Manager is null!!! This is on expected.");
+            }
+
+            return _instance;
+        }
+    }
+
+    public bool IsCutscenePlaying { get; set; }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     private void Start()
     {
         if (m_beginningCutscene != null) m_beginningCutscene.Init();

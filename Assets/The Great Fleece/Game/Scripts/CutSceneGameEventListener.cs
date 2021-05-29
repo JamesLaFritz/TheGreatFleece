@@ -45,11 +45,15 @@ public class CutSceneGameEventListener
         System.Diagnostics.Debug.Assert(m_cutScene != null, nameof(m_cutScene) + " != null");
         m_cutScene.SetActive(true);
 
+        System.Diagnostics.Debug.Assert(GameManager.Instance != null, "GameManager.Instance != null");
+        GameManager.Instance.IsCutscenePlaying = true;
+
         // wait for the cut scene to be played
         System.Diagnostics.Debug.Assert(m_playableDirector != null, nameof(m_playableDirector) + " != null");
         yield return new WaitForSeconds((float) m_playableDirector.duration);
 
         // disable the cutscene
+        GameManager.Instance.IsCutscenePlaying = false;
         m_cutScene.SetActive(false);
     }
 }

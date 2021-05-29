@@ -43,9 +43,9 @@ public abstract class NavMeshAgentMovement : MonoBehaviour
         m_hasAnimator = m_animator != null;
         if (m_animator) return;
 
-        Debug.LogWarning("Animator has not been set and I could not find one on this Object or in it's" +
+        Debug.LogWarning($"Animator has not been set {gameObject.name} and I could not find one on this Object or in it's" +
                          " children was this intentional. This is needed in order to set the Animation" +
-                         " Parameters.", gameObject);
+                         " Parameters.", gameObject.transform);
     }
 
     /// <summary>
