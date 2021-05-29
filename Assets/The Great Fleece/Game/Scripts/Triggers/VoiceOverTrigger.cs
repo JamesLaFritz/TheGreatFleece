@@ -12,7 +12,7 @@ public class VoiceOverTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{name} Colliding with {other.name} with tag {other.name}");
+        //Debug.Log($"{name} Colliding with {other.name} with tag {other.name}");
 
         if (m_hasBeenTriggered) return;
 

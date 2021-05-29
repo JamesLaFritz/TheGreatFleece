@@ -81,7 +81,10 @@ public class CutSceneGameEventListener
         if (!HasCutSceneToPlay())
             return;
 
-        // disable the cutscene
+        Debug.Assert(m_playableDirector != null, nameof(m_playableDirector) + " != null");
+        if (m_playableDirector.extrapolationMode != DirectorWrapMode.None)
+            return;
+
         Debug.Assert(GameManager.Instance != null, "GameManager.Instance != null");
         Debug.Assert(AudioManager.Instance != null, "AudioManager.Instance != null");
         Debug.Assert(m_cutScene != null, nameof(m_cutScene) + " != null");
