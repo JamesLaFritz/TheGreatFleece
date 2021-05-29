@@ -2,15 +2,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private CutSceneGameEventListener m_beginningCutscene;
-    [SerializeField] private CutSceneGameEventListener m_gameOverCutscene;
-    [SerializeField] private CutSceneGameEventListener m_sleepingGuardCutscene;
-    [SerializeField] private CutSceneGameEventListener m_completeLevelCutscene;
-
-    [SerializeField] private GameObject keyCard;
-
-    private bool m_hasKeyCard;
-
     private static GameManager _instance;
 
     public static GameManager Instance
@@ -27,6 +18,17 @@ public class GameManager : MonoBehaviour
     }
 
     public bool IsCutscenePlaying { get; set; }
+
+    public CutSceneGameEventListener CurrentCutscene { get; set; }
+
+    [SerializeField] private CutSceneGameEventListener m_beginningCutscene;
+    [SerializeField] private CutSceneGameEventListener m_gameOverCutscene;
+    [SerializeField] private CutSceneGameEventListener m_sleepingGuardCutscene;
+    [SerializeField] private CutSceneGameEventListener m_completeLevelCutscene;
+
+    [SerializeField] private GameObject keyCard;
+
+    private bool m_hasKeyCard;
 
     private void Awake()
     {
@@ -56,6 +58,15 @@ public class GameManager : MonoBehaviour
         if (m_gameOverCutscene != null) m_gameOverCutscene.OnDisable();
         if (m_sleepingGuardCutscene != null) m_sleepingGuardCutscene.OnDisable();
         if (m_completeLevelCutscene != null) m_completeLevelCutscene.OnDisable();
+    }
+
+    private void Update()
+    {
+        if (IsCutscenePlaying && Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Assert(CurrentCutscene != null, nameof(CurrentCutscene) + " != null");
+            StartCoroutine(CurrentCutscene.SkipCutScene());
+        }
     }
 
     private void OnBeginningCutsceneEvent()
