@@ -74,7 +74,7 @@ public class SecurityCamera : MonoBehaviour
             }
 
             Debug.Assert(m_event != null, nameof(m_event) + " != null");
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(0.5f);
             m_event.Raise();
 
             break;
