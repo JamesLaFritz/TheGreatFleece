@@ -7,7 +7,29 @@ public class MoveToClickPoint : NavMeshAgentMovement
     private GameObject m_clickedVisualGameObject;
     private bool m_hasClickedVisualGameObject;
 
+    [SerializeField] private CodedGameEventListener[] cutsceneEvents;
+
     #region Overrides of NavMeshAgentMovement
+
+    private void OnEnable()
+    {
+        if (cutsceneEvents == null || cutsceneEvents.Length < 1) return;
+        Debug.Assert(cutsceneEvents != null, nameof(cutsceneEvents) + " != null");
+        foreach (CodedGameEventListener t in cutsceneEvents)
+        {
+            t?.OnEnable(StopMovement);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (cutsceneEvents == null || cutsceneEvents.Length < 1) return;
+        Debug.Assert(cutsceneEvents != null, nameof(cutsceneEvents) + " != null");
+        foreach (CodedGameEventListener t in cutsceneEvents)
+        {
+            t?.OnDisable();
+        }
+    }
 
     /// <inheritdoc />
     protected override void Start()
