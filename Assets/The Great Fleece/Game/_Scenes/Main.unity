@@ -3470,7 +3470,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.122
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15449,7 +15449,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22351,7 +22351,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842464930}
-  m_LocalRotation: {x: 0.19215012, y: -0.7222892, z: 0.22159386, w: 0.62631685}
+  m_LocalRotation: {x: 0.19215012, y: -0.7222892, z: 0.22159387, w: 0.62631685}
   m_LocalPosition: {x: 13.840836, y: 13.670038, z: 18.574778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -22388,7 +22388,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.777528, y: 1}
+    m_SensorSize: {x: 1.7801857, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -47465,7 +47465,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.19215012, y: -0.7222892, z: 0.22159386, w: 0.62631685}
+  m_LocalRotation: {x: 0.19215012, y: -0.7222892, z: 0.22159387, w: 0.62631685}
   m_LocalPosition: {x: 13.840836, y: 13.670038, z: 18.574778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
