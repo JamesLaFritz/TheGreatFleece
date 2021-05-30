@@ -3,11 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField, Scene] private int GameSceneToLoad = 1;
+    [SerializeField, Scene] private int GameSceneToLoad = 2;
 
-    public void LoadLevel()
+    [SerializeField, Scene] private int LoadingScreenBuildIndex = 1;
+
+    public void LoadScene()
     {
-        SceneManager.LoadScene(1);
+        LoadLevel.sceneToLoadBuildIndex = GameSceneToLoad;
+        SceneManager.LoadScene(LoadingScreenBuildIndex);
     }
 
     public void Quit()
