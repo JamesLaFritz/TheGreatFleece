@@ -102,7 +102,7 @@ public class MoveToCoinTossPosition : MonoBehaviour
         }
 
         Debug.Assert(m_agent != null, nameof(m_agent) + " != null");
-        while (m_agent.remainingDistance > 0)
+        while (m_agent.remainingDistance > 1f)
         {
             yield return null;
         }
