@@ -29,6 +29,8 @@ public class MoveToClickPoint : NavMeshAgentMovement
         {
             t?.OnDisable();
         }
+
+        DestroyClickedObject();
     }
 
     /// <inheritdoc />
@@ -62,11 +64,16 @@ public class MoveToClickPoint : NavMeshAgentMovement
 
     protected override void StopMovement()
     {
+        DestroyClickedObject();
+    }
+
+    #endregion
+
+    private void DestroyClickedObject()
+    {
         if (!m_hasClickedVisualGameObject) return;
         m_hasClickedVisualGameObject = false;
         Destroy(m_clickedVisualGameObject);
         m_clickedVisualGameObject = null;
     }
-
-    #endregion
 }
