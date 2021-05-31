@@ -35,8 +35,7 @@ public class UIManager : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #elif UNITY_WEBGL
         Application.OpenURL("https://JamesLaFritz.com");
-        #else
-        Application.Quit();
         #endif
+        Application.Quit();
     }
 }
